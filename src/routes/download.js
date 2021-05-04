@@ -53,7 +53,6 @@ router.post('/info/', async (req,res)=>{
 router.get('/song', async (req,res)=>{
     const {url} = req.query
     let info = await getBasicInfo(url)
-    console.log(info.videoDetails.title);
     const {title} = info.videoDetails
     res.header(
         'Content-Disposition',

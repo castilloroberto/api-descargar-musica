@@ -2,8 +2,9 @@
   "name": "youtube_downloader",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
+    "start":"node .",
     "dev": "nodemon src/server.js"
   },
   "keywords": [],

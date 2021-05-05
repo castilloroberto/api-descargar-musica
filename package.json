@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "start":"node .",
+    "start": "node .",
     "dev": "nodemon src/server.js"
   },
   "keywords": [],
@@ -13,7 +13,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "ytdl-core": "^4.5.0",
+    "ytdl-core": "^4.7.0",
     "ytsr": "^3.5.0"
   },
   "devDependencies": {

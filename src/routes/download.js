@@ -44,8 +44,8 @@ router.post('/info/', async (req,res)=>{
            video_url,
            videoId
         })
-    }else{
-        res.send({"msg":"hola"})
+    } else {
+        res.status(400).send({"msg":"no envio ningun url"})
     }
 })
 

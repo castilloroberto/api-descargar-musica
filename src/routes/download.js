@@ -14,17 +14,26 @@ router.post('/search', async (req,res)=>{
 router.get('/download', async (req,res)=>{
     
     const {url} = req.query
-    const info = await getBasicInfo(url)
-    const {title} = info.videoDetails
-    res.header(
-        'Content-Disposition',
-        `attachment;filename="${title}.mp4`
-    )
-    
-    down(url,{
-        format:'mp4'
-    })
-    .pipe(res)
+    if (!url) {
+        return res.status(400).json({msg:"no ha enviado el identificador del video que desea decargar"})
+    }
+    try {
+        
+        const info = await getBasicInfo(url)
+        const {title} = info.videoDetails
+        res.header(
+            'Content-Disposition',
+            `attachment;filename="${title}.mp4`
+        )
+        
+        down(url,{
+            format:'mp4'
+        })
+        .pipe(res)
+
+    } catch (error) {
+        res.status(400).json({msg:"url invalido",error})
+    }
 
 
 })

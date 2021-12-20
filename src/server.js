@@ -11,7 +11,7 @@ app.use(express.json());
 
 //rutas
 app.use(require("./routes/download"));
-app.use("api/v2/", require("./routes/videos"));
+app.use("/api.v2/videos", require("./routes/videos"));
 
 app.listen(app.get("port"), () => {
   console.log(`Server running on port ${app.get("port")}`);
